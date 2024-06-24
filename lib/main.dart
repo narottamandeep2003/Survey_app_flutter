@@ -482,7 +482,9 @@ class _ResultPageState extends State<ResultPage> {
                   height: 10,
                 ),
                 Text(
-                  mcq.options[widget.map[mcq.id] ?? 0],
+                  widget.map[mcq.id] == null
+                      ? "not selected "
+                      : mcq.options[widget.map[mcq.id] ?? 0],
                   style: TextStyle(
                       fontSize: 18,
                       color: mcq.correctOptionIndex == widget.map[mcq.id]
@@ -514,4 +516,3 @@ class _ResultPageState extends State<ResultPage> {
     );
   }
 }
-
